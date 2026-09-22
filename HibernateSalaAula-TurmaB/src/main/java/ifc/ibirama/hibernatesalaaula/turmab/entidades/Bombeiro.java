@@ -16,8 +16,8 @@ public class Bombeiro {
     private String nome;
     private String guerra;
 
-    public Bombeiro(){
-        
+    public Bombeiro() {
+
     }
 
     //Id
@@ -67,6 +67,16 @@ public class Bombeiro {
 
     @Override
     public boolean equals(Object obj) {
-        
+        if (obj instanceof Bombeiro) {
+            Bombeiro aux = (Bombeiro)obj;
+            
+            if(aux.getId().equals(this.Id) && (aux.getCpf().equals(this.cpf)) ){
+                
+            }
+            
+        } else {
+            return false;
+        }
+        return true;
     }
 }
