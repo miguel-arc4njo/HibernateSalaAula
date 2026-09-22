@@ -71,12 +71,13 @@ public class Bombeiro {
             Bombeiro aux = (Bombeiro)obj;
             
             if(aux.getId().equals(this.Id) && (aux.getCpf().equals(this.cpf)) ){
-                
+                return true;
+            }else{
+                return false;
             }
             
         } else {
             return false;
         }
-        return true;
     }
 }
