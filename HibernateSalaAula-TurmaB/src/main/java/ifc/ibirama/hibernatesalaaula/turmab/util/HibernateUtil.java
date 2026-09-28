@@ -8,8 +8,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 /**
- **
- * @author aluno
+ *
+ * @author mcama
  */
 public class HibernateUtil {
 
@@ -21,13 +21,13 @@ public class HibernateUtil {
         } catch (Throwable erro) {
             throw new ExceptionInInitializerError(erro);
         }
-    
+    }
 
     public static SessionFactory getSessionFactory() {
         return factory;
     }
 
     public static void shutdown() {
-        factory.close();
+        getSessionFactory().close();
     }
 }
