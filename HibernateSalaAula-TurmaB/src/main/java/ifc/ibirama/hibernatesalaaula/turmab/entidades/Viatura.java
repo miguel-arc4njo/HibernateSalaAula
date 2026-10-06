@@ -55,7 +55,7 @@ public class Viatura {
         this.placa = Placa;
     }
 
-    //combustivel
+    //combustível
     public String getCombustivel() {
         return combustivel;
     }
@@ -73,7 +73,7 @@ public class Viatura {
         this.ultimaRevisao = UltimaRevisao;
     }
 
-    //km
+    //quilômetro
     public Integer getKm() {
         return km;
     }
