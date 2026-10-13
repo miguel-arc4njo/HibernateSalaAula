@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDate;
 
@@ -33,6 +34,8 @@ public class Bombeiro {
     @Column(name = "bom_nome_guerra", nullable = false, length = 45, unique = true)
     private String guerra;
     
+    @OneToOne(mappedBy = "bombeiro")
+    private Usuario usuario;
 
     public Bombeiro() {
 
@@ -83,6 +86,17 @@ public class Bombeiro {
         this.guerra = guerra;
     }
 
+    
+    //Usuario
+    public Usuario getUsuario(){
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    
+    
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Bombeiro) {

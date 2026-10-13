@@ -24,5 +24,6 @@
         <mapping class=" ifc.ibirama.hibernatesalaaula.turmab.entidades.Bombeiro" />
         <mapping class=" ifc.ibirama.hibernatesalaaula.turmab.entidades.Viatura" />
         <mapping class=" ifc.ibirama.hibernatesalaaula.turmab.entidades.StatusViatura" />
+        <mapping class=" ifc.ibirama.hibernatesalaaula.turmab.entidades.Usuario" />
     </session-factory>
 </hibernate-configuration>
