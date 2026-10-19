@@ -25,5 +25,6 @@
         <mapping class=" ifc.ibirama.hibernatesalaaula.turmab.entidades.Viatura" />
         <mapping class=" ifc.ibirama.hibernatesalaaula.turmab.entidades.StatusViatura" />
         <mapping class=" ifc.ibirama.hibernatesalaaula.turmab.entidades.Usuario" />
+        <mapping class=" ifc.ibirama.hibernatesalaaula.turmab.entidades.TelefoneDeContato" />
     </session-factory>
 </hibernate-configuration>
