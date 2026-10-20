@@ -29,6 +29,24 @@ public class GerenciarBombeiro {
         bombeiro01.setNome("Fulano da Silva");
         bombeiro01.setGuerra("Silva");
         
+         Transaction transacao = null;
+         
+         try {
+            transacao = sessao.beginTransaction();
+            sessao.persist(bombeiro01);
+            
+            transacao.commit();
+            
+            System.out.println("Bombeiro 'salvo' ");
+            
+            sessao.close();
+            
+        } catch (Exception erro) {
+            if (transacao != null) {
+                transacao.rollback();
+            }
+        }
+        
         HibernateUtil.shutdown();
         
         

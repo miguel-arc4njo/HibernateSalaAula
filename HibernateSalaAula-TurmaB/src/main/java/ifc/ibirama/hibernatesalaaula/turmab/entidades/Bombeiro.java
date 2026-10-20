@@ -41,9 +41,11 @@ public class Bombeiro {
     @Column(name = "bom_nome_guerra", nullable = false, length = 45, unique = true)
     private String guerra;
 
+    /*
     //usuario
     @OneToOne(mappedBy = "bombeiro")
     private Usuario usuario;
+    
 
     //TelefoneDeContato
     @OneToMany(mappedBy = "bombeiro")
@@ -55,7 +57,7 @@ public class Bombeiro {
             joinColumns = @JoinColumn(name = "Bom_id"), 
             inverseJoinColumns = @JoinColumn(name = "pat_id"))
     private Set<Patente> patente = new HashSet<Patente>();
-    
+    */
     //BombeiroHasPatente
     
     
@@ -108,6 +110,7 @@ public class Bombeiro {
         this.guerra = guerra;
     }
 
+    /*
     //Usuario
     public Usuario getUsuario() {
         return usuario;
@@ -136,7 +139,7 @@ public class Bombeiro {
         this.patente = patente;
     }
     
-
+    */
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Bombeiro) {
