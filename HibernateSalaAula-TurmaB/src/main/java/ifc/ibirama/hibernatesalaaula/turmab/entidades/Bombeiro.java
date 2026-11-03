@@ -41,12 +41,12 @@ public class Bombeiro {
     @Column(name = "bom_nome_guerra", nullable = false, length = 45, unique = true)
     private String guerra;
 
-    /*
+    
     //usuario
     @OneToOne(mappedBy = "bombeiro")
     private Usuario usuario;
     
-
+    /*
     //TelefoneDeContato
     @OneToMany(mappedBy = "bombeiro")
     private Set<TelefoneDeContato> telefone = new HashSet<TelefoneDeContato>();
@@ -110,7 +110,7 @@ public class Bombeiro {
         this.guerra = guerra;
     }
 
-    /*
+    
     //Usuario
     public Usuario getUsuario() {
         return usuario;
@@ -120,6 +120,7 @@ public class Bombeiro {
         this.usuario = usuario;
     }
 
+    /*
     //TelefoneDeContato
     public Set<TelefoneDeContato> getTelefone() {
         return telefone;
