@@ -5,6 +5,7 @@
 package ifc.ibirama.hibernatesalaaula.turmab;
 
 import ifc.ibirama.hibernatesalaaula.turmab.entidades.Bombeiro;
+import ifc.ibirama.hibernatesalaaula.turmab.entidades.Usuario;
 import ifc.ibirama.hibernatesalaaula.turmab.util.HibernateUtil;
 import java.time.LocalDate;
 import java.time.Month;
@@ -24,16 +25,24 @@ public class GerenciarBombeiro {
         System.out.println("Conexão estabelecida com sucesso !!");
         
         Bombeiro bombeiro01 = new Bombeiro();
-        bombeiro01.setCpf("1234567812");
+        bombeiro01.setCpf("125287846");
         bombeiro01.setDataNascimento(LocalDate.of(1990, Month.JANUARY, 22));
-        bombeiro01.setNome("Fulano da Silva");
+        bombeiro01.setNome("Juilziano da Silva");
         bombeiro01.setGuerra("Silva");
+        
+        Usuario usuario1 = new Usuario();
+        usuario1.setLogin("juilziano.silva");
+        usuario1.setSenha("12365");
+        
+        bombeiro01.setUsuario(usuario1);
+        usuario1.setBombeiro(bombeiro01);
         
          Transaction transacao = null;
          
          try {
             transacao = sessao.beginTransaction();
             sessao.persist(bombeiro01);
+            sessao.persist(usuario1);
             
             transacao.commit();
             
@@ -49,31 +58,6 @@ public class GerenciarBombeiro {
         
         HibernateUtil.shutdown();
         
-        Bombeiro bombeiro02 = new Bombeiro();
-        bombeiro01.setCpf("1234587812");
-        bombeiro01.setDataNascimento(LocalDate.of(1990, Month.JANUARY, 22));
-        bombeiro01.setNome("Fulano da silva santos");
-        bombeiro01.setGuerra("Santos");
-        
-         
-         
-         try {
-            transacao = sessao.beginTransaction();
-            sessao.persist(bombeiro01);
-            
-            transacao.commit();
-            
-            System.out.println("Bombeiro 'salvo' ");
-            
-            sessao.close();
-            
-        } catch (Exception erro) {
-            if (transacao != null) {
-                transacao.rollback();
-            }
-        }
-        
-        HibernateUtil.shutdown();
         
         
     
