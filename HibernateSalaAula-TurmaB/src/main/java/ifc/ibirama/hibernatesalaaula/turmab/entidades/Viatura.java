@@ -18,7 +18,7 @@ import java.time.LocalDate;
  */
 @Entity
 @Table(name = "Viatura")
-public class Viatura {
+public abstract class  Viatura {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -105,6 +105,10 @@ public class Viatura {
     @Override
     public int hashCode() {
         return getClass().hashCode();
+    }
+
+    Object getAlturaMax() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
