@@ -4,6 +4,8 @@
  */
 package ifc.ibirama.hibernatesalaaula.turmab.entidades;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 
 /**
@@ -12,7 +14,11 @@ import jakarta.persistence.PrimaryKeyJoinColumn;
  */@PrimaryKeyJoinColumn(name = "id")
  
 public class AutoEscada extends Viatura {
+     @Id
+     @Column(name="aue_id")
     private Integer id;
+     
+     @Column(name="aue_altura_max", unique = true, nullable = false)
     private Integer alturaMax;
     
     public AutoEscada(){

@@ -4,6 +4,8 @@
  */
 package ifc.ibirama.hibernatesalaaula.turmab.entidades;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 
 /**
@@ -11,7 +13,11 @@ import jakarta.persistence.PrimaryKeyJoinColumn;
  * @author aluno
  */@PrimaryKeyJoinColumn(name = "id")
 public class UnidadeResgate extends Viatura {
+     @Id
+     @Column(name="aut_id")
     private Integer id;
+     
+     @Column(name="aue_capacidade", unique = true, nullable = false)
     private Integer capacidade;
     
     public UnidadeResgate(){
